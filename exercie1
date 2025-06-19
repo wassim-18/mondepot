@@ -1,0 +1,22 @@
+mport tkinter as tk
+# Fonction à exécuter lorsqu'on clique sur la case à cocher
+def selectionner_langue():
+    #langue_selectionne = langue_var.get()  # récuprer notre choix de langue
+    #label.config(text=f"vous avez seletionné la langue : {langue_selectionne}")
+### propostion de Adel
+    label.config(text=f"vous avez seletionné la langue : {langue_var.get()}")  
+# création de la fenêtre principale
+window = tk.Tk()
+# Variable pour stocker la langue selectionnée
+langue_var = tk.StringVar()   # retourner un string comme résultat
+# création des boutons radio pour les différents langues
+fre_button =tk.Radiobutton(window,text="Francais",variable=langue_var,value="Francais",command=selectionner_langue)
+fre_button.pack()
+eng_button =tk.Radiobutton(window,text="Anglais",variable=langue_var,value="Anglais",command=selectionner_langue)
+eng_button.pack()
+esp_button =tk.Radiobutton(window,text="Espagnole",variable=langue_var,value="Espagnole",command=selectionner_langue)
+esp_button.pack()
+# Création un label
+label = tk.Label(window,text="")
+label.pack()
+# je lance ma fenêtre 
